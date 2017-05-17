@@ -58,6 +58,5 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\System.Web.WebPages.xml
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\SociateGeYoung.Models.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\SociateGeYoung.Models.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\SociateGeYoung.Models.pdb
