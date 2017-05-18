@@ -144,3 +144,7 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Microsoft
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.pdb
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\SociateGeYoung.Services.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\SociateGeYoung.Services.pdb
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\AutoMapper.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\AutoMapper.xml

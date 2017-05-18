@@ -15,6 +15,9 @@ namespace SociateGeYoung.Data
         {
         }
 
+        public virtual DbSet<FirstTest> FirstTests { get; set; }
+
+
         public static SociateGeYoungContext Create()
         {
             return new SociateGeYoungContext();

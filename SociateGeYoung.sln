@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SociateGeYoung.Models", "So
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SociateGeYoung.Data", "SociateGeYoung.Data\SociateGeYoung.Data.csproj", "{F57E5085-503E-4CBB-8A63-B5D2FADA9B72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SociateGeYoung.Services", "SociateGeYoung.Services\SociateGeYoung.Services.csproj", "{C0E1E26C-F1F1-4973-97EC-599D908E9692}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F57E5085-503E-4CBB-8A63-B5D2FADA9B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57E5085-503E-4CBB-8A63-B5D2FADA9B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57E5085-503E-4CBB-8A63-B5D2FADA9B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E1E26C-F1F1-4973-97EC-599D908E9692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E1E26C-F1F1-4973-97EC-599D908E9692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E1E26C-F1F1-4973-97EC-599D908E9692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E1E26C-F1F1-4973-97EC-599D908E9692}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

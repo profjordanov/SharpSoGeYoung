@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -168,8 +172,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\FirstTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoboController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,6 +187,48 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\full-slider.css" />
+    <Content Include="Content\img\1.JPG" />
+    <Content Include="Content\img\16466731_1605203339519801_1287787153_o.jpg" />
+    <Content Include="Content\img\2.JPG" />
+    <Content Include="Content\img\3.JPG" />
+    <Content Include="Content\img\4.JPG" />
+    <Content Include="Content\img\job.jpg" />
+    <Content Include="Content\img\SGE.jpg" />
+    <Content Include="Content\img\SG_varna_building-landscape.jpg" />
+    <Content Include="Content\img\shutterstock_117772573.jpg" />
+    <Content Include="Content\img\shutterstock_125228330.jpg" />
+    <Content Include="Content\img\shutterstock_217421512.jpg" />
+    <Content Include="Content\img\shutterstock_235860319.jpg" />
+    <Content Include="Content\img\shutterstock_287309855.jpg" />
+    <Content Include="Content\img\shutterstock_368887307.jpg" />
+    <Content Include="Content\img\shutterstock_381212158.jpg" />
+    <Content Include="Content\img\shutterstock_551937754.jpg" />
+    <Content Include="Content\img\shutterstock_94718611.jpg" />
+    <Content Include="Content\img\team\basket.png" />
+    <Content Include="Content\img\team\camera.png" />
+    <Content Include="Content\img\team\creativity.png" />
+    <Content Include="Content\img\team\img-1.jpg" />
+    <Content Include="Content\img\team\img-2.jpg" />
+    <Content Include="Content\img\team\img-3.jpg" />
+    <Content Include="Content\img\team\img-4.jpg" />
+    <Content Include="Content\img\team\img-5.jpg" />
+    <Content Include="Content\img\team\img-6.jpg" />
+    <Content Include="Content\img\team\lab.png" />
+    <Content Include="Content\img\team\laptop.png" />
+    <Content Include="Content\img\telefon.jpg" />
+    <Content Include="Content\innerCSS\animate.css" />
+    <Content Include="Content\innerCSS\bootstrap-responsive.css" />
+    <Content Include="Content\innerCSS\bootstrap-responsive.min.css" />
+    <Content Include="Content\innerCSS\bootstrap.css" />
+    <Content Include="Content\innerCSS\bootstrap.min.css" />
+    <Content Include="Content\innerCSS\default.css" />
+    <Content Include="Content\innerCSS\flexslider.css" />
+    <Content Include="Content\innerCSS\font-awesome-ie7.css" />
+    <Content Include="Content\innerCSS\font-awesome.css" />
+    <Content Include="Content\innerCSS\overwrite.css" />
+    <Content Include="Content\innerCSS\prettyPhoto.css" />
+    <Content Include="Content\innerCSS\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -197,6 +247,123 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="template\css\new-age.css" />
+    <Content Include="template\css\new-age.min.css" />
+    <Content Include="template\gulpfile.js" />
+    <Content Include="template\img\18452405_1631841063522695_197104775_o.jpg" />
+    <Content Include="template\img\404_page_cover.jpg" />
+    <Content Include="template\img\action.jpg" />
+    <Content Include="template\img\app-store-badge.svg" />
+    <Content Include="template\img\bg-cta.jpg" />
+    <Content Include="template\img\bg-pattern.png" />
+    <Content Include="template\img\demo-screen-1.jpg" />
+    <Content Include="template\img\google-play-badge.svg" />
+    <Content Include="template\img\idea.png" />
+    <Content Include="template\img\people.png" />
+    <Content Include="template\img\proces.jpg" />
+    <Content Include="template\index.html" />
+    <Content Include="template\js\new-age.js" />
+    <Content Include="template\js\new-age.min.js" />
+    <Content Include="template\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="template\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="template\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="template\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="template\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="template\lib\device-mockups\apple_watch\edition\gold.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\edition\rose.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\sport\black.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\sport\blue.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\sport\green.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\sport\red.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\sport\white.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\watch\metal.png" />
+    <Content Include="template\lib\device-mockups\apple_watch\watch\steel.png" />
+    <Content Include="template\lib\device-mockups\device-mockups.css" />
+    <Content Include="template\lib\device-mockups\device-mockups.min.css" />
+    <Content Include="template\lib\device-mockups\device-mockups2.css" />
+    <Content Include="template\lib\device-mockups\device-mockups2.min.css" />
+    <Content Include="template\lib\device-mockups\galaxy_s3\s3_land_black.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s3\s3_land_white.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s3\s3_port_black.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s3\s3_port_white.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_land_black.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_land_gold.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_land_white.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_port_black.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_port_gold.png" />
+    <Content Include="template\lib\device-mockups\galaxy_s5\galaxy_s5_port_white.png" />
+    <Content Include="template\lib\device-mockups\galaxy_tab4\galaxy_tab4_land_black.png" />
+    <Content Include="template\lib\device-mockups\galaxy_tab4\galaxy_tab4_land_white.png" />
+    <Content Include="template\lib\device-mockups\galaxy_tab4_small\galaxy_tab4_black_small.png" />
+    <Content Include="template\lib\device-mockups\galaxy_tab4_small\galaxy_tab4_white_small.png" />
+    <Content Include="template\lib\device-mockups\imac\imac.png" />
+    <Content Include="template\lib\device-mockups\ipad\ipad_land_black.png" />
+    <Content Include="template\lib\device-mockups\ipad\ipad_land_white.png" />
+    <Content Include="template\lib\device-mockups\ipad\ipad_port_black.png" />
+    <Content Include="template\lib\device-mockups\ipad\ipad_port_white.png" />
+    <Content Include="template\lib\device-mockups\ipad_air\ipad_air_gray_land.png" />
+    <Content Include="template\lib\device-mockups\ipad_air\ipad_air_gray_port.png" />
+    <Content Include="template\lib\device-mockups\ipad_air\ipad_air_silver_land.png" />
+    <Content Include="template\lib\device-mockups\ipad_air\ipad_air_silver_port.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_gold_land.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_gold_port.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_gray_land.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_gray_port.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_silver_land.png" />
+    <Content Include="template\lib\device-mockups\ipad_air_2\ipad_air_2_silver_port.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_land_black.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_land_gold.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_land_silver.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_port_black.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_port_gold.png" />
+    <Content Include="template\lib\device-mockups\ipad_pro\ipad_pro_port_silver.png" />
+    <Content Include="template\lib\device-mockups\iphone5\iphone5_land_black.png" />
+    <Content Include="template\lib\device-mockups\iphone5\iphone5_land_white.png" />
+    <Content Include="template\lib\device-mockups\iphone5\iphone5_port_black.png" />
+    <Content Include="template\lib\device-mockups\iphone5\iphone5_port_white.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_land_black.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_land_gold.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_land_white.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_port_black.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_port_gold.png" />
+    <Content Include="template\lib\device-mockups\iphone_6\iphone_6_port_white.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_black_land.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_black_port.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_gold_land.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_gold_port.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_white_land.png" />
+    <Content Include="template\lib\device-mockups\iphone_6_plus\iphone_6_plus_white_port.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_land_black.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_land_gold.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_land_rose.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_land_white.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_port_black.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_port_gold.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_port_rose.png" />
+    <Content Include="template\lib\device-mockups\iphone_se\iphone_se_port_white.png" />
+    <Content Include="template\lib\device-mockups\lumia920\lumia920_land.png" />
+    <Content Include="template\lib\device-mockups\lumia920\lumia920_port.png" />
+    <Content Include="template\lib\device-mockups\lumia_930\lumia_930_dark_land.png" />
+    <Content Include="template\lib\device-mockups\lumia_930\lumia_930_dark_port.png" />
+    <Content Include="template\lib\device-mockups\lumia_930\lumia_930_light_land.png" />
+    <Content Include="template\lib\device-mockups\lumia_930\lumia_930_light_port.png" />
+    <Content Include="template\lib\device-mockups\macbook\macbook.png" />
+    <Content Include="template\lib\device-mockups\macbook_2015\gold.png" />
+    <Content Include="template\lib\device-mockups\macbook_2015\grey.png" />
+    <Content Include="template\lib\device-mockups\macbook_2015\silver.png" />
+    <Content Include="template\lib\device-mockups\nexus7\nexus7_land.png" />
+    <Content Include="template\lib\device-mockups\nexus7\nexus7_port.png" />
+    <Content Include="template\lib\device-mockups\nexus_6\nexus_6_land.png" />
+    <Content Include="template\lib\device-mockups\nexus_6\nexus_6_port.png" />
+    <Content Include="template\lib\device-mockups\samsung_tv\samsung_tv.png" />
+    <Content Include="template\lib\device-mockups\surface\surface.png" />
+    <Content Include="template\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="template\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="template\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="template\lib\jquery\jquery.js" />
+    <Content Include="template\lib\jquery\jquery.min.js" />
+    <Content Include="template\lib\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="template\lib\simple-line-icons\fonts\Simple-Line-Icons.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -231,6 +398,65 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Ads\All.cshtml" />
+    <Content Include="Views\Robo\Index.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\FirstTest\Index.cshtml" />
+    <Content Include="template\less\mixins.less" />
+    <Content Include="template\less\new-age.less" />
+    <Content Include="template\less\variables.less" />
+    <Content Include="template\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="template\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="template\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="template\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="template\lib\device-mockups\iphone5\iphone5_land.psd" />
+    <Content Include="template\lib\device-mockups\lumia920\lumia920_land.psd" />
+    <Content Include="template\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="template\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="template\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="template\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="template\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="template\lib\font-awesome\less\animated.less" />
+    <Content Include="template\lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="template\lib\font-awesome\less\core.less" />
+    <Content Include="template\lib\font-awesome\less\fixed-width.less" />
+    <Content Include="template\lib\font-awesome\less\font-awesome.less" />
+    <Content Include="template\lib\font-awesome\less\icons.less" />
+    <Content Include="template\lib\font-awesome\less\larger.less" />
+    <Content Include="template\lib\font-awesome\less\list.less" />
+    <Content Include="template\lib\font-awesome\less\mixins.less" />
+    <Content Include="template\lib\font-awesome\less\path.less" />
+    <Content Include="template\lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="template\lib\font-awesome\less\screen-reader.less" />
+    <Content Include="template\lib\font-awesome\less\stacked.less" />
+    <Content Include="template\lib\font-awesome\less\variables.less" />
+    <Content Include="template\lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="template\lib\font-awesome\scss\_animated.scss" />
+    <Content Include="template\lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="template\lib\font-awesome\scss\_core.scss" />
+    <Content Include="template\lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="template\lib\font-awesome\scss\_icons.scss" />
+    <Content Include="template\lib\font-awesome\scss\_larger.scss" />
+    <Content Include="template\lib\font-awesome\scss\_list.scss" />
+    <Content Include="template\lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="template\lib\font-awesome\scss\_path.scss" />
+    <Content Include="template\lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="template\lib\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="template\lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="template\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="template\lib\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="template\lib\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="template\lib\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="template\lib\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="template\lib\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="template\lib\simple-line-icons\scss\simple-line-icons.scss" />
+    <Content Include="template\LICENSE" />
+    <Content Include="template\package.json" />
+    <Content Include="template\README.md" />
+    <Content Include="Views\FirstTest\Style1.cshtml" />
+    <Content Include="Views\FirstTest\Style2.cshtml" />
+    <Content Include="Views\FirstTest\Style3.cshtml" />
+    <Content Include="Views\FirstTest\Style4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SociateGeYoung.Data\SociateGeYoung.Data.csproj">
@@ -240,6 +466,10 @@
     <ProjectReference Include="..\SociateGeYoung.Models\SociateGeYoung.Models.csproj">
       <Project>{659D5701-EC57-451F-8991-AD396E45A55F}</Project>
       <Name>SociateGeYoung.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SociateGeYoung.Services\SociateGeYoung.Services.csproj">
+      <Project>{C0E1E26C-F1F1-4973-97EC-599D908E9692}</Project>
+      <Name>SociateGeYoung.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
