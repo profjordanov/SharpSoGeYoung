@@ -217,6 +217,7 @@
     <Content Include="Content\img\team\lab.png" />
     <Content Include="Content\img\team\laptop.png" />
     <Content Include="Content\img\telefon.jpg" />
+    <Content Include="Content\img\timeline.jpg" />
     <Content Include="Content\innerCSS\animate.css" />
     <Content Include="Content\innerCSS\bootstrap-responsive.css" />
     <Content Include="Content\innerCSS\bootstrap-responsive.min.css" />

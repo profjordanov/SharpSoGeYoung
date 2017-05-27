@@ -55,15 +55,16 @@ namespace SociateGeYoung.App
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+                          appId: "740048219489179",
+                          appSecret: "b5537a80816b2fa534c5ba1fd5267670");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "280238745250-9nte4kuc6evi0t4ke958o4mt5kac00sc.apps.googleusercontent.com",
+                ClientSecret = "-SbySVKkv_TGuTH9SUa_XmMM",
+                Provider = new GoogleOAuth2AuthenticationProvider()
+            });
         }
     }
 }
