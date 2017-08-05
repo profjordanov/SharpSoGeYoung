@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdsService.cs" />
     <Compile Include="AutoMapperWebConfiguration.cs" />
     <Compile Include="FirstTestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

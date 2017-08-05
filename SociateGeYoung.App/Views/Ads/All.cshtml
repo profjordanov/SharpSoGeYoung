@@ -1,30 +1,25 @@
-﻿
+﻿@model IEnumerable<SociateGeYoung.Models.ViewModels.JobAdVm>
 @{
     ViewBag.Title = "All";
 }
 
 <div class="container body-content">
     <h1>Обяви</h1>
-
+    @foreach (var vm in Model)
+    {
+        <div style="border: 2px solid black" class="container">
+            <img src="@vm.ImageUrl" alt="" width="200" height="200" style="alignment: left" />
+            <label>@vm.Position</label>
+            @Html.ActionLink("Повече информация","Details", new {id = vm.Id}, new { @class = "btn btn-lg btn-success" })
+        </div>
+        <br />
+    }
     <div style="border: 2px solid black" class="container">
         <img src="http://www.weblaunch.com/img/img-job-board.jpg" alt="" width="200" height="200" style="alignment: left" />
         <label>Вид длъжност *Специалист международни отношения</label>
         <a href="http://localhost:11818/Ads/AdsInfo">Повече информация</a>
         <button class="btn btn-lg btn-success" style="alignment: center">Кандидатствай</button>
     </div>
-    <br />
-    <div style="border: 2px solid black" class="container">
-        <img src="http://www.weblaunch.com/img/img-job-board.jpg" alt="" width="200" height="200" style="alignment: left" />
-        <label>Вид длъжност *Network Administrator</label>
-        <a href="#">Повече информация</a>
-        <button class="btn btn-lg btn-success" style="alignment: center">Кандидатствай</button>
-    </div>
-    <br />
-    <div style="border: 2px solid black" class="container">
-        <img src="http://www.weblaunch.com/img/img-job-board.jpg" alt="" width="200" height="200" style="alignment: left" />
-        <label>Вид длъжност *Network Administrator</label>
-        <a href="#">Повече информация</a>
-        <button class="btn btn-lg btn-success" style="alignment: center">Кандидатствай</button>
-    </div>
+   
 </div>
 

@@ -1,3 +1,7 @@
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using SociateGeYoung.Models.EntityModels;
+
 namespace SociateGeYoung.Data.Migrations
 {
     using System;
@@ -14,18 +18,36 @@ namespace SociateGeYoung.Data.Migrations
 
         protected override void Seed(SociateGeYoung.Data.SociateGeYoungContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            //Create Admin role
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                manager.Create(role);
+            }
+            //Create Student role
+            if (!context.Roles.Any(r => r.Name == "Student"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Student" };
+
+                manager.Create(role);
+            }
+            //Create admin
+            if (!context.Users.Any(u => u.UserName == "maria.filipova@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "maria.filipova@gmail.com", Email = "maria.filipova@gmail.com"};
+
+                var result = manager.Create(user, "@soge1234");
+                manager.AddToRole(user.Id, "Admin");
+                manager.AddToRole(user.Id, "Student");
+                context.SaveChanges();
+            }
         }
     }
 }

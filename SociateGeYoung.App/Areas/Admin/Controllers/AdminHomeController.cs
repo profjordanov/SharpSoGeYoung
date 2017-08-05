@@ -4,14 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SociateGeYoung.App.Controllers
+namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
-    [RoutePrefix("Status")]
-
-    public class StatusController : Controller
+    public class AdminHomeController : Controller
     {
-        [HttpGet]
-        [Route]
+        // GET: Admin/AdminHome
         public ActionResult Index()
         {
             return View();
