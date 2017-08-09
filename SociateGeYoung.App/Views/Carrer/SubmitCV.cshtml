@@ -1,0 +1,38 @@
+﻿@model SociateGeYoung.Models.EntityModels.CarrerCV
+@{
+    ViewBag.Title = "SubmitCV";
+}
+<div class="container body-content">
+    <h2>Submit your CV</h2>
+
+    @using (Html.BeginForm("SubmitCV", "Carrer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            @if (ViewBag.Message != null)
+            {
+                <span style="color:green">
+                    @ViewBag.Message
+                </span>
+            }
+
+            <div class="editor-label">
+                Select CV
+            </div>
+            <div class="editor-field">
+                <input type="file" name="file" />
+                @Html.ValidationMessage("CustomError")
+            </div>
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

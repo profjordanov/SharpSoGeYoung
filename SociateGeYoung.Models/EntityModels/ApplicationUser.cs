@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -7,6 +8,10 @@ namespace SociateGeYoung.Models.EntityModels
 {
     public class ApplicationUser : IdentityUser
     {
+        public ApplicationUser()
+        {
+            this.CarrerCvs = new HashSet<CarrerCV>();
+        }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -14,5 +19,7 @@ namespace SociateGeYoung.Models.EntityModels
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection<CarrerCV> CarrerCvs { get; set; }
     }
 }

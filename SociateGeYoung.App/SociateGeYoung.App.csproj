@@ -176,6 +176,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdsController.cs" />
+    <Compile Include="Controllers\CarrerController.cs" />
     <Compile Include="Controllers\FirstTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -464,6 +465,7 @@
     <Content Include="Views\FirstTest\Style3.cshtml" />
     <Content Include="Views\FirstTest\Style4.cshtml" />
     <Content Include="Views\Ads\Details.cshtml" />
+    <Content Include="Views\Carrer\SubmitCV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SociateGeYoung.Data\SociateGeYoung.Data.csproj">
@@ -491,6 +493,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\AdminHome\" />
     <Folder Include="Areas\Admin\Views\Ads\" />
+    <Folder Include="UploadedCVs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -17,6 +17,8 @@ namespace SociateGeYoung.Data
 
         public virtual DbSet<FirstTest> FirstTests { get; set; }
         public virtual DbSet<JobAd> JobAds { get; set; }
+        public virtual DbSet<CarrerCV> CarrerCvs { get; set; }
+
 
 
 
