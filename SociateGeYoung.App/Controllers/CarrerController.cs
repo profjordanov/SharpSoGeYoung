@@ -47,7 +47,7 @@ namespace SociateGeYoung.App.Controllers
             {
                 try
                 {
-                    string fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                    string fileName = Path.GetFileName(file.FileName);
                     file.SaveAs(Path.Combine(Server.MapPath("~/UploadedCVs"), fileName));
                     this.service.CreateFile(c, fileName, userId);
                     ModelState.Clear();
@@ -56,7 +56,6 @@ namespace SociateGeYoung.App.Controllers
                 }
                 catch (Exception e)
                 {
-                    
                     ViewBag.Message = "Error! Please try again";
                     return View();
                 }

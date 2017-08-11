@@ -100,6 +100,7 @@
     <Compile Include="BindingModels\AddJobAdBm.cs" />
     <Compile Include="BindingModels\FirstTestBM.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
+    <Compile Include="EntityModels\Apply.cs" />
     <Compile Include="EntityModels\CarrerCV.cs" />
     <Compile Include="EntityModels\FirstTest.cs" />
     <Compile Include="EntityModels\JobAd.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\AddJobAdVm.cs" />
+    <Compile Include="ViewModels\ApplyIndexVm.cs" />
     <Compile Include="ViewModels\CarrerCvVm.cs" />
     <Compile Include="ViewModels\DatailsJobAdVm.cs" />
     <Compile Include="ViewModels\JobAdVm.cs" />

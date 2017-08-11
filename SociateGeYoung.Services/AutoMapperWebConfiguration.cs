@@ -16,7 +16,6 @@ namespace SociateGeYoung.Services
                 expression.CreateMap<JobAd, DatailsJobAdVm>();
                 expression.CreateMap<AddJobAdBm, JobAd>();
                 expression.CreateMap<AddJobAdBm, AddJobAdVm>();
-                
             });
         }
     }

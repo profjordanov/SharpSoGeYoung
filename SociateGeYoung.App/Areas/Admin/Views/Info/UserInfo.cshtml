@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SociateGeYoung.Models.EntityModels.ApplicationUser>
+@{
+    ViewBag.Title = "UserInfo";
+}
+
+<h2>All Students Info</h2>
+
+@foreach (var user in Model)
+{
+    <div style="border: 2px solid black">
+        <h4>@user.UserName</h4>
+        @foreach (var cv in user.CarrerCvs)
+        {
+            <p>@cv.CVpath</p>
+            <a href="~/UploadedCVs/@cv.CVpath">Open CV</a>
+            <hr/>
+            foreach (var apply in cv.Applies)
+            {
+                <p>@apply.JobAd.Position</p>
+            }
+        }
+    </div>
+}

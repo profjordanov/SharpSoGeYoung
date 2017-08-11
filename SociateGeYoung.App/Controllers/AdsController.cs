@@ -27,7 +27,7 @@ namespace SociateGeYoung.App.Controllers
             IEnumerable<JobAdVm> vms = this.service.GetAllAds();
             return View(vms);
         }
-
+        [Authorize]
         [HttpGet]
         [Route("details/{id}")]
         public ActionResult Details(int? id)

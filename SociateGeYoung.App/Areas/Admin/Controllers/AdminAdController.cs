@@ -10,6 +10,7 @@ using SociateGeYoung.Services;
 
 namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminAdController : Controller
     {
         private AdsService service;
