@@ -245,7 +245,6 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAd\Add.cshtml" />
-    <Content Include="Areas\Admin\Views\Info\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Info\UserInfo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
