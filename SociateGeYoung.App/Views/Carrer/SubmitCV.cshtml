@@ -3,7 +3,7 @@
     ViewBag.Title = "SubmitCV";
 }
 <div class="container body-content">
-    <h2>Submit your CV</h2>
+    <h2>Качи CV</h2>
 
     @using (Html.BeginForm("SubmitCV", "Carrer", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
@@ -20,14 +20,14 @@
             }
 
             <div class="editor-label">
-                Select CV
+                Избери файл:
             </div>
             <div class="editor-field">
                 <input type="file" name="file" />
                 @Html.ValidationMessage("CustomError")
             </div>
             <p>
-                <input type="submit" value="Create" />
+                <input type="submit" value="Качи" />
             </p>
         </fieldset>
     }

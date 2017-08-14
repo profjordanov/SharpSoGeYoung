@@ -16,10 +16,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("#SoGeYoung<=", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Добавяне на обява", "Add", "AdminAd")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Потребители", "UserInfo", "Info")
+                    </li>
                 </ul>
             </div>
         </div>

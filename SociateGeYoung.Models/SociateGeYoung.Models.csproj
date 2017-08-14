@@ -98,12 +98,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingModels\AddJobAdBm.cs" />
+    <Compile Include="BindingModels\DeleteCvBm.cs" />
     <Compile Include="BindingModels\FirstTestBM.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Apply.cs" />
     <Compile Include="EntityModels\CarrerCV.cs" />
     <Compile Include="EntityModels\FirstTest.cs" />
     <Compile Include="EntityModels\JobAd.cs" />
+    <Compile Include="Enums\StudentProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginListViewModel.cs" />
@@ -115,9 +117,11 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\AddJobAdVm.cs" />
+    <Compile Include="ViewModels\AllCarrerCVs.cs" />
     <Compile Include="ViewModels\ApplyIndexVm.cs" />
     <Compile Include="ViewModels\CarrerCvVm.cs" />
     <Compile Include="ViewModels\DatailsJobAdVm.cs" />
+    <Compile Include="ViewModels\DeleteCvVm.cs" />
     <Compile Include="ViewModels\JobAdVm.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
@@ -130,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Enums\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

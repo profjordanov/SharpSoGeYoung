@@ -16,6 +16,12 @@ namespace SociateGeYoung.Services
                 expression.CreateMap<JobAd, DatailsJobAdVm>();
                 expression.CreateMap<AddJobAdBm, JobAd>();
                 expression.CreateMap<AddJobAdBm, AddJobAdVm>();
+                expression.CreateMap<CarrerCV, AllCarrerCVs>()
+                    .ForMember(vm => vm.ApplicationUser, 
+                         configurationExpression => configurationExpression.MapFrom(cv => cv.ApplicationUser));
+                expression.CreateMap<CarrerCV, DeleteCvVm>();
+
+
             });
         }
     }

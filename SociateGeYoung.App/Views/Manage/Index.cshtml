@@ -9,6 +9,9 @@
     <p class="text-success">@ViewBag.StatusMessage</p>
     <div>
         @Html.ActionLink("Качи CV", "SubmitCV", "Carrer", new { userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-success" })
+        @Html.ActionLink("Всички CV-та", "All", "Carrer", new { userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-info" })
+
+
         <hr />
         
         <h4>Change your account settings</h4>

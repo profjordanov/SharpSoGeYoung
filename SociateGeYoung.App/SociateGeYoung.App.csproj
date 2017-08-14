@@ -239,6 +239,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="RoboTemplate\css\plugin.css" />
+    <Content Include="RoboTemplate\css\style.css" />
+    <Content Include="RoboTemplate\fonts\fontawesome-webfont.svg" />
+    <Content Include="RoboTemplate\images\bg\bg.jpg" />
+    <Content Include="RoboTemplate\images\bg\me.jpg" />
+    <Content Include="RoboTemplate\images\bg\statistics.jpg" />
+    <Content Include="RoboTemplate\images\favicon\apple-touch-icon.png" />
+    <Content Include="RoboTemplate\images\favicon\favicon.ico" />
+    <Content Include="RoboTemplate\images\owl-carousel\grabbing.png" />
+    <Content Include="RoboTemplate\images\portfolio\1.jpg" />
+    <Content Include="RoboTemplate\images\portfolio\2.jpg" />
+    <Content Include="RoboTemplate\images\portfolio\3.jpg" />
+    <Content Include="RoboTemplate\images\portfolio\4.jpg" />
+    <Content Include="RoboTemplate\images\portfolio\5.jpg" />
+    <Content Include="RoboTemplate\images\portfolio\6.jpg" />
+    <Content Include="RoboTemplate\images\testimonial\1.png" />
+    <Content Include="RoboTemplate\images\testimonial\2.png" />
+    <Content Include="RoboTemplate\images\testimonial\3.png" />
+    <Content Include="RoboTemplate\js\jquery.min.js" />
+    <Content Include="RoboTemplate\js\plugin.js" />
+    <Content Include="RoboTemplate\js\scripts.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -246,6 +267,12 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAd\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Info\UserInfo.cshtml" />
+    <Content Include="RoboTemplate\fonts\fontawesome-webfont.eot" />
+    <Content Include="RoboTemplate\fonts\fontawesome-webfont.ttf" />
+    <Content Include="RoboTemplate\fonts\fontawesome-webfont.woff" />
+    <Content Include="RoboTemplate\fonts\fontawesome-webfont.woff2" />
+    <Content Include="RoboTemplate\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -470,6 +497,8 @@
     <Content Include="Views\Ads\Details.cshtml" />
     <Content Include="Views\Carrer\SubmitCV.cshtml" />
     <Content Include="Views\Apply\Index.cshtml" />
+    <Content Include="Views\Carrer\All.cshtml" />
+    <Content Include="Views\Carrer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SociateGeYoung.Data\SociateGeYoung.Data.csproj">
@@ -494,8 +523,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\AdminHome\" />
     <Folder Include="UploadedCVs\" />
   </ItemGroup>
   <PropertyGroup>

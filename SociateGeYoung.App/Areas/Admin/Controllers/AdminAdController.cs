@@ -26,12 +26,12 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
         }
         
         [HttpPost]
-        public ActionResult Add([Bind(Include = "Position,ImageUrl,Description")]AddJobAdBm bind)
+        public ActionResult Add([Bind(Include = "Position,ImageUrl,StudentProfile,Description")]AddJobAdBm bind)
         {
             if (ModelState.IsValid)
             {
                 this.service.CreateJobAd(bind);
-                return RedirectToAction("All", "Ads");
+                return Redirect("/Ads");
             }
             AddJobAdVm vm = Mapper.Map<AddJobAdBm, AddJobAdVm>(bind);
             return View(vm);

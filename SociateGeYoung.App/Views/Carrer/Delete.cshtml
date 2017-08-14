@@ -1,0 +1,21 @@
+﻿@model SociateGeYoung.Models.ViewModels.DeleteCvVm
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container body-content">
+    <h2>Изтрий @Model.CVpath</h2>
+    <h3>Кандидатури с това CV:</h3>
+    @foreach (var apply in @Model.Applies)
+    {
+        <p><span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position</p>
+    }
+    @using (Html.BeginForm("Delete", "Carrer", FormMethod.Post))
+    {
+        <input type="number" hidden="hidden" name="CvId" value="@Model.Id" />
+        <div class="form-group">
+            <input type="submit" value="Изтрий" class="btn btn-danger" />
+        </div>
+    }
+</div>
+

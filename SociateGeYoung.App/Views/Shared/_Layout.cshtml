@@ -37,6 +37,10 @@
                     <li>@Html.ActionLink("Обяви", "All", "Ads")</li>
                     <li>@Html.ActionLink("#SoGeRobo", "Index", "Robo")</li>
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("ЧР профил", "Index", "AdminHome", new { area = "Admin" }, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

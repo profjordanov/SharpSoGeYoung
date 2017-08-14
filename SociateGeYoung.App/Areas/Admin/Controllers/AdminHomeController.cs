@@ -6,9 +6,11 @@ using System.Web.Mvc;
 
 namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
+    [RoutePrefix("AdminHome")]
     public class AdminHomeController : Controller
     {
         // GET: Admin/AdminHome
+        [Route]
         public ActionResult Index()
         {
             return View();

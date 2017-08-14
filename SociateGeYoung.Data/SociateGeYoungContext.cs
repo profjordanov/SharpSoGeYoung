@@ -25,6 +25,16 @@ namespace SociateGeYoung.Data
         {
             return new SociateGeYoungContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CarrerCV>()
+                .HasMany<Apply>(c => c.Applies)
+                .WithOptional(x => x.CarrerCv)
+                .WillCascadeOnDelete(true);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
    

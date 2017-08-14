@@ -1,0 +1,38 @@
+﻿@using System.Web.UI.WebControls
+@using Microsoft.AspNet.Identity
+@model IEnumerable<SociateGeYoung.Models.ViewModels.AllCarrerCVs>
+@{
+    ViewBag.Title = "All";
+}
+<div class="container body-content">
+    <br />
+    @Html.ActionLink("Качи CV", "SubmitCV", "Carrer", new {userId = User.Identity.GetUserId()}, new {@class = "btn btn-lg btn-success"})
+    <hr />
+    <h2>Твойте CV-та</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Име</th>
+            <th>Позиции с това CV</th>
+            <th>Промяна</th>
+        </tr>
+        @foreach (var cv in Model)
+        {
+            <tr>
+                <td>@cv.CVpath</td>
+                <td>
+                    <select class="form-control">
+                        @foreach (var apply in cv.Applies)
+                        {
+                            <option>@apply.JobAd.Position</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <a href="/carrer/delete/@cv.Id" class="btn btn-danger">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+

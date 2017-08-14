@@ -21,10 +21,10 @@ namespace SociateGeYoung.App.Controllers
         }
 
         [HttpGet]
-        [Route]
-        public ActionResult All()
+        [Route("{profile?}")]
+        public ActionResult All(string profile)
         {
-            IEnumerable<JobAdVm> vms = this.service.GetAllAds();
+            IEnumerable<JobAdVm> vms = this.service.GetAllAds(profile);
             return View(vms);
         }
         [Authorize]
