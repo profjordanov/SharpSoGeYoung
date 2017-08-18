@@ -1,0 +1,23 @@
+﻿@model SociateGeYoung.Models.EntityModels.ApplicationUser
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтрий @Model.UserName</h2>
+<h4>Кандидатствал за следните позиции:</h4>
+@foreach (var cv in Model.CarrerCvs)
+{
+    foreach (var apply in cv.Applies)
+    {
+        <p>@apply.JobAd.Position</p>
+    }
+}
+<form method="post">
+    <div class="form-group">
+        @Html.HiddenFor(m => m.Id)
+        <input type="submit" value="Изтрий" class="btn btn-lg btn-danger" />
+    </div>
+</form>
+
+
+

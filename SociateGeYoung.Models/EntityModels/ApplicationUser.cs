@@ -10,7 +10,9 @@ namespace SociateGeYoung.Models.EntityModels
     {
         public ApplicationUser()
         {
-            this.CarrerCvs = new HashSet<CarrerCV>();      
+            this.CarrerCvs = new HashSet<CarrerCV>();     
+            this.FirstTests = new HashSet<FirstTest>();
+
         }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -19,5 +21,7 @@ namespace SociateGeYoung.Models.EntityModels
         }
 
         public virtual ICollection<CarrerCV> CarrerCvs { get; set; }
+        public virtual ICollection<FirstTest> FirstTests { get; set; }
+
     }
 }

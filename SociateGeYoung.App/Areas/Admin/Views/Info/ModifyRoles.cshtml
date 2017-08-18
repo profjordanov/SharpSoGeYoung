@@ -1,0 +1,19 @@
+﻿@model IEnumerable <Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "ModifyRoles";
+}
+
+<h2>ModifyRoles</h2>
+@using (Html.BeginForm("ModifyRoles","Info",FormMethod.Post))
+{
+    <label class="control-label">Избери роля за студента: </label>
+    <select class="form-control">
+        @foreach (var role in Model)
+        {
+            <option id="@role.Id">@role.Name</option>
+        }
+    </select>
+    <div class="form-group">
+        <input type="submit" value="Добави Роля" class="btn btn-lg btn-info" />
+    </div>
+}

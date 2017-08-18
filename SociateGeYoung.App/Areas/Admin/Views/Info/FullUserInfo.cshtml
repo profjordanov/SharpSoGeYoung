@@ -1,0 +1,46 @@
+﻿@using SociateGeYoung.Models.EntityModels
+@using WebGrease.Css.Extensions
+@model IEnumerable<SociateGeYoung.Models.ViewModels.InfoUserVm>
+@{
+    ViewBag.Title = "UserInfo";
+}
+@foreach (var user in Model.OfType<ApplicationUser>())
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail">
+                <div class="caption-full">
+                    <h2>Студент: </h2>
+                    <h4>
+                        <a href="#">@user.UserName</a>
+                    </h4>
+                </div>
+                <div class="well">
+                    @foreach (var cv in user.CarrerCvs)
+                    {
+                        <div class="text-left">
+                            <h4>CV с име: @cv.CVpath</h4>
+                            <a href="~/UploadedCVs/@cv.CVpath" class="btn btn-success">Отвори CV</a>
+                        </div>
+                        <br />
+                        <h4>Позиции, за които е кандидатствал с това CV:</h4>
+                        foreach (var apply in cv.Applies)
+                        {
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <p><span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position</p>
+                                </div>
+                            </div>
+
+                        }
+
+                        <hr>
+                    }
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+    <br />
+}

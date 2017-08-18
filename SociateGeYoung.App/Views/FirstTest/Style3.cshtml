@@ -26,10 +26,15 @@
             <img src="~/template/img/people.png" class="img-thumbnail" width="400" height="400" align="middle" style="display: block;margin: 0 auto;" />
             <br />
             <br />
+            @if (ViewBag.Message != null)
+            {
+                <h4>Твоят код е: <span id="value">@ViewBag.Message</span></h4>
+            }
             @Html.ActionLink("Обяви за теб", "All", "Ads", new { profile = "PeopleOriented" }, new { @class = "btn btn-primary btn-lg" })
 
             <br />
         </div>
     </div>
 </section>
+@Scripts.Render("~/Scripts/CodeJS.js")
 

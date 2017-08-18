@@ -10,6 +10,11 @@
     <div>
         @Html.ActionLink("Качи CV", "SubmitCV", "Carrer", new { userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-success" })
         @Html.ActionLink("Всички CV-та", "All", "Carrer", new { userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-info" })
+        @Html.ActionLink("Добави Тест Код", "AddTestCode", "FirstTest", new { userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-warning" })
+
+
+
+
 
 
         <hr />

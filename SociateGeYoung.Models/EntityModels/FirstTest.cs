@@ -88,5 +88,7 @@
         public bool Quest78 { get; set; }
         public bool Quest79 { get; set; }
         public bool Quest80 { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string CodeForUser { get; set; }
     }
 }

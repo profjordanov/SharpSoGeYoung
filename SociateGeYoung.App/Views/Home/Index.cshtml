@@ -1,4 +1,5 @@
-﻿    <!-- Full Page Image Background Carousel Header -->
+﻿@model IEnumerable<SociateGeYoung.Models.ViewModels.HomeNewsVm>
+<!-- Full Page Image Background Carousel Header -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:500px !important;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -72,14 +73,34 @@
     }
 </style>
 
-    <hr class="featurette-divider">
-    <div class="container body-content">
-        <div class="featurette">
-            <img class="featurette-image pull-right" src="~/Content/img/SGE.jpg" />
-            <h2 class="featurette-heading">Добре дошъл в #SoGeYoung.</h2>
-            <h3>Направихме го за хора като теб – млади, мислещи, искащи и заредени с ентусиазъм.</h3>
-            <h3>Ние знаем, че всеки се нуждае от мъничко „ побутване“ и шанс, за да реализира мечтите си. Е, ние сме готови да ги реализираме заедно!</h3>
-            <h3>#Време е за нещо по-добро!</h3>
-            <h3>Време е за SoGeYoung! Забавлявай се!</h3>
-        </div>
+<hr class="featurette-divider">
+<div class="container body-content">
+    <div class="featurette">
+        <img class="featurette-image pull-right" src="~/Content/img/SGE.jpg" />
+        <h2 class="featurette-heading">Добре дошъл в #SoGeYoung.</h2>
+        <h3>Направихме го за хора като теб – млади, мислещи, искащи и заредени с ентусиазъм.</h3>
+        <h3>Ние знаем, че всеки се нуждае от мъничко „ побутване“ и шанс, за да реализира мечтите си. Е, ние сме готови да ги реализираме заедно!</h3>
+        <h3>#Време е за нещо по-добро!</h3>
+        <h3>Време е за SoGeYoung! Забавлявай се!</h3>
     </div>
+</div>
+<hr class="featurette-divider">
+<div class="container">
+    <div class="row">
+        @foreach (var neu in Model)
+        {
+            <div class="col-md-4 thumbnail">
+                <img src="@neu.ImageThumbnail" alt="pic" class="img-thumbnail" />
+                <div class="block">
+                    <h4 class="text-center"><strong>@neu.Title</strong></h4>
+                    <p class="text-info text-center">@neu.ReleaseDate</p>
+                    <p>@neu.Description</p>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+
+

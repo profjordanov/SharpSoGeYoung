@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services;
 
 namespace SociateGeYoung.App.Controllers
 {
     public class HomeController : Controller
     {
+        private HomeService service;
+
+        public HomeController()
+        {
+            this.service = new HomeService();
+        }
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<HomeNewsVm> vm = this.service.GetAllNews();
+            return View(vm);
         }
 
         public ActionResult About()

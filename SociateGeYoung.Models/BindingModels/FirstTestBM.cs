@@ -87,5 +87,6 @@
         public bool Quest78 { get; set; }
         public bool Quest79 { get; set; }
         public bool Quest80 { get; set; }
+        public string UserId { get; set; }
     }
 }

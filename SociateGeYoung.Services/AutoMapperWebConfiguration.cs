@@ -11,7 +11,9 @@ namespace SociateGeYoung.Services
         {
             Mapper.Initialize(expression =>
             {
-                expression.CreateMap<FirstTestBM, FirstTest>();
+                expression.CreateMap<FirstTestBM, FirstTest>()
+                    .IgnoreAllPropertiesWithAnInaccessibleSetter()
+                    .IgnoreAllSourcePropertiesWithAnInaccessibleSetter();
                 expression.CreateMap<JobAd, JobAdVm>();
                 expression.CreateMap<JobAd, DatailsJobAdVm>();
                 expression.CreateMap<AddJobAdBm, JobAd>();
@@ -20,6 +22,8 @@ namespace SociateGeYoung.Services
                     .ForMember(vm => vm.ApplicationUser, 
                          configurationExpression => configurationExpression.MapFrom(cv => cv.ApplicationUser));
                 expression.CreateMap<CarrerCV, DeleteCvVm>();
+                expression.CreateMap<AddNewBm, New>();
+                expression.CreateMap<New, HomeNewsVm>();
 
 
             });

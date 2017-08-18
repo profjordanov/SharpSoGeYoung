@@ -1,0 +1,56 @@
+﻿@model Tuple<IEnumerable<SociateGeYoung.Models.EntityModels.ApplicationUser>, IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>>
+
+@{
+    ViewBag.Title = "ManageUsers";
+}
+
+<h3>Всички потребители</h3>
+@using (Html.BeginForm())
+{
+   <p>
+       Намери по email: @Html.Editor("searchString")
+       <input type="submit" value="Търси" class="btn btn-sm btn-success" />
+   </p>
+}
+<table class="table table-striped">
+    <tr>
+        <th>Email</th>
+        <th>CV-та</th>
+        <th>Права</th>
+        <th>Промяна</th>
+    </tr>
+    @foreach (var user in Model.Item1)
+    {
+        <tr>
+            <td>
+                @user.UserName
+            </td>
+            <td>
+                <select class="form-control">
+                    @foreach (var cv in user.CarrerCvs)
+                    {
+                        <option>@cv.CVpath</option>
+                    }
+                </select>
+            </td>
+            <td>
+                <select class="form-control">
+                    @foreach (var userRole in user.Roles)
+                    {
+                        foreach (var roleBase in Model.Item2)
+                        {
+                            if (roleBase.Id.Equals(userRole.RoleId))
+                            {
+                                <option id="@roleBase.Id">@roleBase.Name</option>
+                            }
+                        }
+                    }
+                </select>
+            </td>
+            <td>
+                <a href="/Admin/Info/ModifyRoles/@user.Id" class="btn btn-sm btn-warning">Промени права</a>              
+                <a href="/Admin/Info/Delete/@user.Id" class="btn btn-sm btn-danger">Изтрий потребител</a>
+            </td>
+        </tr>
+    }
+</table>
