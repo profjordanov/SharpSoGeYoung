@@ -10,6 +10,7 @@ using SociateGeYoung.Services;
 namespace SociateGeYoung.App.Controllers
 {
     [RoutePrefix("Ads")]
+    [AllowAnonymous]
 
     public class AdsController : Controller
     {
@@ -27,7 +28,6 @@ namespace SociateGeYoung.App.Controllers
             IEnumerable<JobAdVm> vms = this.service.GetAllAds(profile);
             return View(vms);
         }
-        [Authorize]
         [HttpGet]
         [Route("details/{id}")]
         public ActionResult Details(int? id)

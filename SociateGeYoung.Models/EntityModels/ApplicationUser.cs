@@ -20,6 +20,7 @@ namespace SociateGeYoung.Models.EntityModels
             return userIdentity;
         }
 
+        public bool IsDeleted { get; set; }
         public virtual ICollection<CarrerCV> CarrerCvs { get; set; }
         public virtual ICollection<FirstTest> FirstTests { get; set; }
 

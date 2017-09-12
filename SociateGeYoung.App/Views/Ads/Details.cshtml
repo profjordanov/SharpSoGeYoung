@@ -13,7 +13,8 @@
         <label>Профил за тази позиция:</label>
         <h4>@Model.StudentProfile</h4>
         <br />
-        <p class="text-justify">@Model.Description</p>
+        @*@<p class="text-justify">@Model.Description</p>*@
+        @Html.Raw(Model.Description)
     </div>
     @Html.ActionLink("Кандидатствай", "Index","Apply", new { jobAdId = Model.Id, userId = User.Identity.GetUserId() }, new { @class = "btn btn-lg btn-success" })
 

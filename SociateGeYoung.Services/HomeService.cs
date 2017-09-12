@@ -3,10 +3,11 @@ using System.Linq;
 using AutoMapper;
 using SociateGeYoung.Models.EntityModels;
 using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class HomeService : Service
+    public class HomeService : Service,IHomeService
     {
         public IEnumerable<HomeNewsVm> GetAllNews()
         {

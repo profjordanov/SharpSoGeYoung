@@ -8,14 +8,15 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using SociateGeYoung.Data;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class CarrerService : Service
+    public class CarrerService : Service,ICarrerService
     {
         public void CreateFile(CarrerCV carrerCv, string fileName, string userId)
         {
-            ApplicationUser user = this.UserManager.FindByIdAsync(userId).Result;
+            ApplicationUser user = this.UserManager.FindById(userId);
 
             carrerCv.CVpath = fileName;
             carrerCv.ApplicationUser = user;

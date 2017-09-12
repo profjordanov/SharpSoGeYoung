@@ -5,12 +5,12 @@ using SociateGeYoung.Models.EntityModels;
 
 namespace SociateGeYoung.Services
 {
-    public class Service
+    public abstract class Service
     {
         protected SociateGeYoungContext Context;
         protected UserManager<ApplicationUser> UserManager;
 
-        public Service()
+        protected Service()
         {
             this.Context = new SociateGeYoungContext();
             this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.Context));

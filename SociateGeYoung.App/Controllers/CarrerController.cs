@@ -12,6 +12,7 @@ using SociateGeYoung.Services;
 
 namespace SociateGeYoung.App.Controllers
 {
+    [Authorize]
     [RoutePrefix("carrer")]
     public class CarrerController : Controller
     {

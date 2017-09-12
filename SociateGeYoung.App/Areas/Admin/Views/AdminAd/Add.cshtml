@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Add";
 }
-
 <h2>Add</h2>
 @using (Html.BeginForm())
 {
@@ -24,14 +23,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StudentProfile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(m => m.StudentProfile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(m => m.StudentProfile, new { htmlAttributes = new { @class = "dropdown-toggle" } })
             </div>
         </div>
         
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
         
@@ -41,6 +40,8 @@
             </div>
         </div>
     </div>
-
 }
-
+@section Scripts{
+    <script src="~/Scripts/tinymce/tinymce.js"></script>
+    <script src="~/Scripts/tinymceMain.js"></script>
+}

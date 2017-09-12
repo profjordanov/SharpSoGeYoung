@@ -8,6 +8,7 @@ using SociateGeYoung.Services;
 
 namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class NewsController : Controller
     {
         private NewsService service;

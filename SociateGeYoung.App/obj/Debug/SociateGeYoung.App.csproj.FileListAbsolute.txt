@@ -152,3 +152,8 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Microsoft
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\obj\Debug\SociateGeYoung.App.pdb
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.Core.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.AspNet.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.Mvc5.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.Ado.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.EF6.dll

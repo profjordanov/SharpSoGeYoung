@@ -4,10 +4,11 @@ using AutoMapper;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.EntityModels;
 using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class AdsService : Service
+    public class AdsService : Service,IAdsService
     {
         //  public IEnumerable<JobAdVm> GetAllAds()
         //  {

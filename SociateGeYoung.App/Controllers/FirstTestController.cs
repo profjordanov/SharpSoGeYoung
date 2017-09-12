@@ -6,6 +6,7 @@ using SociateGeYoung.Services;
 namespace SociateGeYoung.App.Controllers
 {
     [RoutePrefix("FirstTest")]
+    [AllowAnonymous]
     public class FirstTestController : Controller
     {
         private FirstTestService firstTestService;

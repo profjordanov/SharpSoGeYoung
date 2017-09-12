@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SociateGeYoung.Models.Attributes;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
 
 namespace SociateGeYoung.App.Controllers
 {
-    [Authorize]
+    [CustomAuthorize]
     [RoutePrefix("apply")]
     public class ApplyController : Controller
     {
@@ -19,6 +20,7 @@ namespace SociateGeYoung.App.Controllers
             this.service = new ApplyService();
         }
         [HttpGet]
+        [Route]
         [Route("{userId}/{jobAdId}")]
 
         public ActionResult Index(string userId, int jobAdId)
@@ -27,13 +29,14 @@ namespace SociateGeYoung.App.Controllers
             return View(vm);
         }
         [HttpPost]
+        [Route]
         [Route("{userId}/{jobAdId}")]
         public ActionResult Index(int jobAdId, int cvId)
         {
             if (ModelState.IsValid)
             {
-                
-                if (this.service.CreateNewApply(jobAdId, cvId))
+                var result = this.service.CreateNewApply(jobAdId, cvId);
+                if (result)
                 {
                     return Content("BRAVO!");
                 }

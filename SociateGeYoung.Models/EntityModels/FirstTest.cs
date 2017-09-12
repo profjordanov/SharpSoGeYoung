@@ -1,7 +1,10 @@
-﻿namespace SociateGeYoung.Models.EntityModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SociateGeYoung.Models.EntityModels
 {
     public class FirstTest
     {
+        [Key]
         public int Id { get; set; }
         public bool Quest1 { get; set; }
         public bool Quest2 { get; set; }

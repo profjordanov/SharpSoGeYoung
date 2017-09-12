@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Security;
 using AutoMapper;
@@ -417,14 +418,15 @@ namespace SociateGeYoung.Services
 
         public ApplicationUser TakeUserForDelete(string id)
         {
-            ApplicationUser user = this.UserManager.FindByIdAsync(id).Result;
+            ApplicationUser user = this.UserManager.FindById(id);
             return user;
         }
 
         public void DeleteUser(DeleteUserBm bind)
         {
-            ApplicationUser user = this.UserManager.FindByIdAsync(bind.Id).Result;
-            this.Context.Users.Remove(user);
+            ApplicationUser user = this.UserManager.FindById(bind.Id);
+            user.IsDeleted = true;
+            this.Context.Users.AddOrUpdate(user);
             this.Context.SaveChanges();
         }
 

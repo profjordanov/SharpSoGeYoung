@@ -2,12 +2,14 @@
 using System.Data.Entity.Migrations;
 using System.Linq;
 using AutoMapper;
+using Microsoft.AspNet.Identity;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.EntityModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class FirstTestService : Service
+    public class FirstTestService : Service,IFirstTestService
     {
         private FirstTest _test;
         public bool IsThereUser { get; set; }
@@ -24,7 +26,7 @@ namespace SociateGeYoung.Services
         public void AddTest(FirstTestBM bind)
         {
             _test = Mapper.Map<FirstTestBM, FirstTest>(bind);
-            ApplicationUser user = this.UserManager.FindByIdAsync(bind.UserId).Result;
+            ApplicationUser user = this.UserManager.FindById(bind.UserId);
             _test.ApplicationUser = user;
             _test.CodeForUser = this.GenerateCode();
             this.Context.FirstTests.Add(_test);
@@ -384,7 +386,7 @@ namespace SociateGeYoung.Services
         public void AddTestCodeForUser(AddTestCodeBm bind)
         {
             FirstTest test = this.Context.FirstTests.FirstOrDefault(x => x.CodeForUser == bind.TestCode);
-            ApplicationUser user = this.UserManager.FindByIdAsync(bind.UserId).Result;
+            ApplicationUser user = this.UserManager.FindById(bind.UserId);
             test.ApplicationUser = user;
             this.Context.FirstTests.AddOrUpdate(test);
             this.Context.SaveChanges();

@@ -2,10 +2,11 @@
 using Microsoft.AspNet.Identity;
 using SociateGeYoung.Models.EntityModels;
 using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class ApplyService : Service
+    public class ApplyService : Service, IApplyService
     {
         public ApplyIndexVm GetApplyTokens(string userId, int jobAdId)
         {

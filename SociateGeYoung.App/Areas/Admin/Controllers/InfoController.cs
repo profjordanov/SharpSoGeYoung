@@ -12,6 +12,7 @@ using SociateGeYoung.Models.BindingModels;
 
 namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class InfoController : Controller
     {
         private InfoService service;

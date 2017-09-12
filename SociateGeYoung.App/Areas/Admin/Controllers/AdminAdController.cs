@@ -26,6 +26,7 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
         }
         
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add([Bind(Include = "Position,ImageUrl,StudentProfile,Description")]AddJobAdBm bind)
         {
             if (ModelState.IsValid)
