@@ -30,6 +30,21 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
             return View(applicationUsers.ToPagedList(pageNumber,pageSize));
         }
 
+        [HttpPost]
+        public ActionResult UserInfo(int? page,[Bind(Include = "ApplyId, ApplyStatus")]UserInfoBm bind)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODO: Save Apply Status to the Apply
+                //TODO: Add apropriate paging
+                //TODO: SEND EMAIL
+            }
+            IEnumerable<ApplicationUser> applicationUsers = this.service.GetAllUserInfo();
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(applicationUsers.ToPagedList(pageNumber, pageSize));
+        }
+
         [HttpGet]
         public ActionResult ManageUsers()
         {

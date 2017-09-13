@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SociateGeYoung.Models.Enums;
 
 namespace SociateGeYoung.Models.EntityModels
 {
@@ -15,6 +16,7 @@ namespace SociateGeYoung.Models.EntityModels
         [Required]
         [Index("CarrerCv_Id", 2, IsUnique = true)]
         public virtual CarrerCV CarrerCv { get; set; }
+        public ApplyStatus ApplyStatus { get; set; }
 
     }
 }

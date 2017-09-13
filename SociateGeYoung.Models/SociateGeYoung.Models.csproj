@@ -106,12 +106,14 @@
     <Compile Include="BindingModels\DeleteUserBm.cs" />
     <Compile Include="BindingModels\FirstTestBM.cs" />
     <Compile Include="BindingModels\ModifyRoleBm.cs" />
+    <Compile Include="BindingModels\UserInfoBm.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Apply.cs" />
     <Compile Include="EntityModels\CarrerCV.cs" />
     <Compile Include="EntityModels\FirstTest.cs" />
     <Compile Include="EntityModels\JobAd.cs" />
     <Compile Include="EntityModels\New.cs" />
+    <Compile Include="Enums\ApplyStatus.cs" />
     <Compile Include="Enums\StudentProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />

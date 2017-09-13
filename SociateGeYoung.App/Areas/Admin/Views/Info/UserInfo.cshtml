@@ -1,29 +1,11 @@
 ﻿@model PagedList.IPagedList<SociateGeYoung.Models.EntityModels.ApplicationUser>
 @using PagedList.Mvc;
+@using SociateGeYoung.Models.Enums
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "UserInfo";
 }
-@*
-    <h2>All Students Info</h2>
 
-    @foreach (var user in Model)
-    {
-        <div style="border: 2px solid black">
-            <h4>@user.UserName</h4>
-            @foreach (var cv in user.CarrerCvs)
-            {
-                <p>@cv.CVpath</p>
-                <a href="~/UploadedCVs/@cv.CVpath">Open CV</a>
-                <hr/>
-                foreach (var apply in cv.Applies)
-                {
-                    <p>@apply.JobAd.Position</p>
-                }
-            }
-        </div>
-    }
-*@
 @foreach (var user in Model)
 {
     <div class="row">
@@ -46,11 +28,27 @@
                         <h4>Позиции, за които е кандидатствал с това CV:</h4>
                         foreach (var apply in cv.Applies)
                         {
+
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <p><span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position</p> 
+                                    <p><span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position</p>
+                                    @using (Html.BeginForm("UserInfo", "Info", FormMethod.Post))
+                                    {
+                                        <input type="number" hidden="hidden" value="@apply.Id" name="ApplyId" />
+                                        <select class="form-control" id="ApplyStatus" name="ApplyStatus">
+                                            <option value="@ApplyStatus.Undefined">Неопределен</option>
+                                            <option value="@ApplyStatus.Appropriate">Подходящ</option>
+                                            <option value="@ApplyStatus.Inappropriate">Неподходящ</option>
+                                            <option value="@ApplyStatus.ModeratelyAppropriate">Средноподходящ</option>
+                                            <option value="@ApplyStatus.ForAnInterview">За Интервю</option>
+                                        </select>
+                                        <div class="form-group">
+                                            <input type="submit" value="Изпрати Email" class="btn btn-sm btn-warning" />
+                                        </div>
+                                    }
                                 </div>
                             </div>
+                            <hr />
 
                         }
 
@@ -64,5 +62,4 @@
     <br />
 }
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("UserInfo",
-    new { page }))
+@Html.PagedListPager(Model, page => Url.Action("UserInfo", new { page }))
