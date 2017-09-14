@@ -9,11 +9,9 @@ namespace SociateGeYoung.Models.EntityModels
         [Key]
         public int Id { get; set; }
 
-        [Required]
         [Index("JobAd_Id", 1, IsUnique = true)]
         public virtual JobAd JobAd { get; set; }
 
-        [Required]
         [Index("CarrerCv_Id", 2, IsUnique = true)]
         public virtual CarrerCV CarrerCv { get; set; }
         public ApplyStatus ApplyStatus { get; set; }

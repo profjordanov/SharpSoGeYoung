@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -21,6 +22,7 @@ namespace SociateGeYoung.Models.EntityModels
         }
 
         public bool IsDeleted { get; set; }
+        public DateTime RegisterOn { get; set; }
         public virtual ICollection<CarrerCV> CarrerCvs { get; set; }
         public virtual ICollection<FirstTest> FirstTests { get; set; }
 

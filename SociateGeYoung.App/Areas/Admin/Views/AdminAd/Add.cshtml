@@ -23,7 +23,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StudentProfile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EnumDropDownListFor(m => m.StudentProfile, new { htmlAttributes = new { @class = "dropdown-toggle" } })
+                @Html.EnumDropDownListFor(m => m.StudentProfile, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
         
@@ -41,7 +41,4 @@
         </div>
     </div>
 }
-@section Scripts{
-    <script src="~/Scripts/tinymce/tinymce.js"></script>
-    <script src="~/Scripts/tinymceMain.js"></script>
-}
+@Scripts.Render("~/bundles/tinymce")

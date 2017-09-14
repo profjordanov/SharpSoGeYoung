@@ -58,3 +58,5 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\bin\Debug\Sy
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\obj\Debug\SociateGeYoung.Data.csprojResolveAssemblyReference.cache
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\obj\Debug\SociateGeYoung.Data.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\obj\Debug\SociateGeYoung.Data.pdb
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\bin\Debug\PagedList.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Data\bin\Debug\PagedList.xml

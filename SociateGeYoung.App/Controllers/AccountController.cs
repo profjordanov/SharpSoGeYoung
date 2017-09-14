@@ -155,6 +155,7 @@ namespace SociateGeYoung.App.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                user.RegisterOn = DateTime.Now;
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 var roleStore = new RoleStore<IdentityRole>(new SociateGeYoungContext());

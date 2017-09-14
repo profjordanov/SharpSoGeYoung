@@ -304,11 +304,11 @@
     <Content Include="RoboTemplate\fonts\fontawesome-webfont.woff2" />
     <Content Include="RoboTemplate\fonts\FontAwesome.otf" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Info\FullUserInfo.cshtml" />
     <Content Include="Areas\Admin\Views\Info\ManageUsers.cshtml" />
     <Content Include="Areas\Admin\Views\Info\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Info\ModifyRoles.cshtml" />
     <Content Include="Areas\Admin\Views\News\New.cshtml" />
+    <Content Include="Areas\Admin\Views\Info\StudentsForInterview.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CodeJS.js" />
     <Content Include="Scripts\CodeSaver.js" />

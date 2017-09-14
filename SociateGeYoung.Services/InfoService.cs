@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.EntityModels;
+using SociateGeYoung.Models.Enums;
 using SociateGeYoung.Models.ViewModels;
 
 namespace SociateGeYoung.Services
@@ -17,13 +18,13 @@ namespace SociateGeYoung.Services
     {
         public IEnumerable<ApplicationUser> GetAllUserInfo()
         {
-            IEnumerable<ApplicationUser> users = this.Context.Users.OrderByDescending(x => x.Id);
+            IEnumerable<ApplicationUser> users = this.Context.Users.OrderByDescending(x => x.RegisterOn);
             return users;
         }
 
         public Tuple<IEnumerable<ApplicationUser>, IEnumerable<IdentityRole>> ModifyUsers(string searchString)
         {
-            IEnumerable<ApplicationUser> users = this.Context.Users.OrderByDescending(x => x.Id);
+            IEnumerable<ApplicationUser> users = this.Context.Users.OrderByDescending(x => x.RegisterOn);
             if (!String.IsNullOrEmpty(searchString))
             {
                 users = users.Where(u => u.UserName.Contains(searchString) || u.Email.Contains(searchString));
@@ -436,6 +437,23 @@ namespace SociateGeYoung.Services
             var manager = new RoleManager<IdentityRole>(store);
             IEnumerable<IdentityRole> roles = manager.Roles;
             return roles;
+        }
+
+        public void SaveStatusToApply(UserInfoBm bind)
+        {
+            var apply = this.Context.Applies.FirstOrDefault(ap => ap.Id == bind.ApplyId);
+            apply.ApplyStatus = bind.ApplyStatus;
+            this.Context.Applies.AddOrUpdate(apply);
+            this.Context.SaveChanges();
+        }
+
+
+        public IEnumerable<Apply> GetAllInterviewApplies()
+        {
+            IEnumerable<Apply> applies = this.Context.Applies
+                .Where(x => x.ApplyStatus == ApplyStatus.ForAnInterview || x.ApplyStatus == ApplyStatus.Appropriate)
+                .OrderByDescending(x => x.Id);
+            return applies;
         }
     }
 }

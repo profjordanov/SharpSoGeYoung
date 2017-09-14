@@ -31,12 +31,11 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UserInfo(int? page,[Bind(Include = "ApplyId, ApplyStatus")]UserInfoBm bind)
+        public ActionResult UserInfo(int? page,[Bind(Include = "ApplyId, UserEmail,JobPosition, ApplyStatus")]UserInfoBm bind)
         {
             if (ModelState.IsValid)
             {
-                //TODO: Save Apply Status to the Apply
-                //TODO: Add apropriate paging
+                this.service.SaveStatusToApply(bind);
                 //TODO: SEND EMAIL
             }
             IEnumerable<ApplicationUser> applicationUsers = this.service.GetAllUserInfo();
@@ -67,6 +66,17 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
             ApplicationUser user = this.service.TakeUserForDelete(id);
             return this.View(user);
         }
+        [HttpPost]
+        public ActionResult Delete([Bind(Include = "Id" )]DeleteUserBm bind)
+        {
+            if (!ModelState.IsValid)
+            {
+                ApplicationUser user = this.service.TakeUserForDelete(bind.Id);
+                return this.View(user);
+            }
+            this.service.DeleteUser(bind);
+            return RedirectToAction("ManageUsers");
+        }
 
         [HttpGet]
         public ActionResult ModifyRoles(string userId)
@@ -74,6 +84,13 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
             IEnumerable<IdentityRole> roles = this.service.GetUserRoles();
             return this.View(roles);
         }
+
+        [HttpGet]
+        public ActionResult StudentsForInterview()
+        {
+            IEnumerable<Apply> appliesForInterview = this.service.GetAllInterviewApplies();
+            return this.View(appliesForInterview);
+        } 
 
         /*
         [HttpPost]

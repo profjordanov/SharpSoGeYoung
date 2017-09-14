@@ -17,6 +17,7 @@
         <th>Email</th>
         <th>CV-та</th>
         <th>Права</th>
+        <th>Активен</th>
         <th>Промяна</th>
     </tr>
     @foreach (var user in Model.Item1)
@@ -47,6 +48,14 @@
                     }
                 </select>
             </td>
+            @if (!user.IsDeleted)
+            {
+                <td>Активен</td>
+            }
+            else
+            {
+                <td>Неактивен</td>
+            }
             <td>
                 <a href="/Admin/Info/ModifyRoles/@user.Id" class="btn btn-sm btn-warning">Промени права</a>              
                 <a href="/Admin/Info/Delete/@user.Id" class="btn btn-sm btn-danger">Изтрий потребител</a>

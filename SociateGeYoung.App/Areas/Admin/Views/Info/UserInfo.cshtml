@@ -31,10 +31,35 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <p><span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position</p>
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position . За тази позиция е:
+                                         @switch (apply.ApplyStatus)
+                                         {
+                                             case ApplyStatus.Undefined:
+                                                 <span class="btn btn-sm btn-default">Неопределен</span>
+                                                 break;
+                                             case ApplyStatus.Appropriate:
+                                                <span class="btn btn-sm btn-success">Подходящ</span>
+                                                 break;
+                                             case ApplyStatus.Inappropriate:
+                                                <span class="btn btn-sm btn-danger">Неподходящ</span>
+                                                 break;
+                                             case ApplyStatus.ModeratelyAppropriate:
+                                                <span class="btn btn-sm btn-info">Средноподходящ</span>
+                                                 break;
+                                             case ApplyStatus.ForAnInterview:
+                                                <span class="btn btn-sm btn-warning">За Интервю</span>
+                                                 break;
+                                         }
+                                    </p>
+                                    <h4>Промяна</h4>
                                     @using (Html.BeginForm("UserInfo", "Info", FormMethod.Post))
                                     {
                                         <input type="number" hidden="hidden" value="@apply.Id" name="ApplyId" />
+                                        <input type="text" hidden="hidden" value="@user.Email" name="UserEmail" />
+                                        <input type="text" hidden="hidden" value="@apply.JobAd.Position" name="JobPosition" />
+
+
                                         <select class="form-control" id="ApplyStatus" name="ApplyStatus">
                                             <option value="@ApplyStatus.Undefined">Неопределен</option>
                                             <option value="@ApplyStatus.Appropriate">Подходящ</option>

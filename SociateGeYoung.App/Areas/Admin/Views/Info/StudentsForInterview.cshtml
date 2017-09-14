@@ -1,0 +1,37 @@
+﻿@using SociateGeYoung.Models.Enums
+@model IEnumerable<SociateGeYoung.Models.EntityModels.Apply>
+@{
+    ViewBag.Title = "StudentsForInterview";
+}
+
+<h2>StudentsForInterview</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Студентски Email</th>
+        <th>Позиция</th>
+        <th>CV</th>
+        <th>Статус</th>
+    </tr>
+    @foreach (var apply in Model)
+    {
+        <tr>
+            <td>
+                @apply.CarrerCv.ApplicationUser.Email
+            </td>
+            <td>
+                @apply.JobAd.Position
+            </td>
+            <td>
+                <a href="~/UploadedCVs/@apply.CarrerCv.CVpath" class="btn btn-success">Отвори CV</a>
+            </td>
+            @if (apply.ApplyStatus == ApplyStatus.ForAnInterview)
+            {
+                <td>Одобрен за интервю</td>
+            }
+            else
+            {
+                <td>Подходящ за позицията</td>
+            }
+        </tr>
+    }
+</table>
