@@ -110,6 +110,7 @@
     <Compile Include="BindingModels\DeleteUserBm.cs" />
     <Compile Include="BindingModels\FirstTestBM.cs" />
     <Compile Include="BindingModels\ModifyRoleBm.cs" />
+    <Compile Include="BindingModels\SubmitCVBm.cs" />
     <Compile Include="BindingModels\UserInfoBm.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Apply.cs" />

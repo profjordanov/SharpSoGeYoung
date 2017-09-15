@@ -14,10 +14,10 @@ namespace SociateGeYoung.Services
 {
     public class CarrerService : Service,ICarrerService
     {
-        public void CreateFile(CarrerCV carrerCv, string fileName, string userId)
+        public void CreateFile(string fileName, string userId)
         {
             ApplicationUser user = this.UserManager.FindById(userId);
-
+            CarrerCV carrerCv = new CarrerCV();
             carrerCv.CVpath = fileName;
             carrerCv.ApplicationUser = user;
             this.Context.CarrerCvs.Add(carrerCv);

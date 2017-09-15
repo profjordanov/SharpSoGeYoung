@@ -31,21 +31,21 @@ namespace SociateGeYoung.App.Controllers
         [HttpPost]
         [Route("{userId}")]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitCV(string userId, CarrerCV c, HttpPostedFileBase file)
+        public ActionResult SubmitCV(string userId,[Bind(Include = "file")] SubmitCVBm bind)
         {
-            if (file == null)
+            if (bind.File == null)
             {
                 ModelState.AddModelError("CustomError", "Моля, избери CV!");
                 return this.View();
             }
-            if (file.ContentLength > 2000000)
+            if (bind.File.ContentLength > 2000000)
             {
                 ModelState.AddModelError("CustomError", "Прекалено голям файл!");
                 return this.View();
             }
 
-            if (!(file.ContentType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
-    file.ContentType == "application/pdf"))
+            if (!(bind.File.ContentType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
+    bind.File.ContentType == "application/pdf"))
             {
                 ModelState.AddModelError("CustomError", "Позволени са само .docx и .pdf документи!");
                 return View();
@@ -55,9 +55,9 @@ namespace SociateGeYoung.App.Controllers
             {
                 try
                 {
-                    string fileName = Path.GetFileName(file.FileName);
-                    file.SaveAs(Path.Combine(Server.MapPath("~/UploadedCVs"), fileName));
-                    this.service.CreateFile(c, fileName, userId);
+                    string fileName = Path.GetFileName(bind.File.FileName);
+                    bind.File.SaveAs(Path.Combine(Server.MapPath("~/UploadedCVs"), fileName));
+                    this.service.CreateFile(fileName, userId);
                     ModelState.Clear();
                     ViewBag.Message = "Успешно качи CV!";
 
