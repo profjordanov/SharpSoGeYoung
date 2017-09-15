@@ -62,3 +62,4 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\SociateGeYoung.Models.pdb
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\PagedList.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\bin\Debug\PagedList.xml
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Models\obj\Debug\SociateGeYoung.Models.csprojResolveAssemblyReference.cache

@@ -36,7 +36,15 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 this.service.SaveStatusToApply(bind);
-                //TODO: SEND EMAIL
+                bool isSuccessMailed = this.service.SendEmailToStudent(bind);
+                if (isSuccessMailed)
+                {
+                    ViewBag.Message = "Успешно прати мейл!";
+                }
+                else
+                {
+                    ViewBag.Message = "НЕуспешно изпратен мейл! Рефреш и опитай отново!";
+                }
             }
             IEnumerable<ApplicationUser> applicationUsers = this.service.GetAllUserInfo();
             int pageSize = 3;

@@ -7,6 +7,7 @@ using AutoMapper;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.ServiceConnectedAttributes;
 
 namespace SociateGeYoung.App.Areas.Admin.Controllers
 {
@@ -27,6 +28,7 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateInput(false)]
+        [EmailAll]
         public ActionResult Add([Bind(Include = "Position,ImageUrl,StudentProfile,Description")]AddJobAdBm bind)
         {
             if (ModelState.IsValid)

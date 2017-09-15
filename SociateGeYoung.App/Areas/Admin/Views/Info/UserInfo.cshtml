@@ -5,7 +5,10 @@
 @{
     ViewBag.Title = "UserInfo";
 }
-
+@if (ViewBag.Message != null)
+{
+    <h3 style="color:green"> @ViewBag.Message</h3>
+}
 @foreach (var user in Model)
 {
     <div class="row">
@@ -70,6 +73,7 @@
                                         <div class="form-group">
                                             <input type="submit" value="Изпрати Email" class="btn btn-sm btn-warning" />
                                         </div>
+                                        
                                     }
                                 </div>
                             </div>

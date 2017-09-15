@@ -34,3 +34,8 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\obj\Debu
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\obj\Debug\SociateGeYoung.Services.pdb
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\PagedList.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\PagedList.xml
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\Glimpse.AspNet.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\Glimpse.Core.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\Glimpse.Mvc5.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\System.Web.Helpers.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.Services\bin\Debug\System.Web.Helpers.xml

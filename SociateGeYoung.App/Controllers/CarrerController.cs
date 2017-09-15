@@ -94,7 +94,7 @@ namespace SociateGeYoung.App.Controllers
             if (this.ModelState.IsValid)
             {
                 this.service.DeleteCv(bind);
-                return this.RedirectToAction("All","Ads");
+                return this.RedirectToAction("All","Ads");//TODO: Redirect?
             }
             DeleteCvVm vm = this.service.GetDeleteCvVm(bind.CvId);
             return this.View(vm);
