@@ -1,7 +1,12 @@
 ﻿@model PagedList.IPagedList<SociateGeYoung.Models.EntityModels.ApplicationUser>
+@using System.Web.UI.WebControls
 @using PagedList.Mvc;
 @using SociateGeYoung.Models.Enums
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@Styles.Render("~/Content/AdminArea/AccordionStyle.css")
+
 @{
     ViewBag.Title = "UserInfo";
 }
@@ -28,32 +33,33 @@
                             <a href="~/UploadedCVs/@cv.CVpath" class="btn btn-success">Отвори CV</a>
                         </div>
                         <br />
-                        <h4>Позиции, за които е кандидатствал с това CV:</h4>
-                        foreach (var apply in cv.Applies)
-                        {
+                        <button class="accordion">Позиции, за които е кандидатствал с това CV</button>
+                        <div class="panel">
+                            @foreach (var apply in cv.Applies)
+                            {
 
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-4">
                                     <p>
                                         <span class="glyphicon glyphicon-star"></span> @apply.JobAd.Position . За тази позиция е:
-                                         @switch (apply.ApplyStatus)
-                                         {
-                                             case ApplyStatus.Undefined:
-                                                 <span class="btn btn-sm btn-default">Неопределен</span>
-                                                 break;
-                                             case ApplyStatus.Appropriate:
+                                        @switch (apply.ApplyStatus)
+                                        {
+                                            case ApplyStatus.Undefined:
+                                                <span class="btn btn-sm btn-default">Неопределен</span>
+                                                break;
+                                            case ApplyStatus.Appropriate:
                                                 <span class="btn btn-sm btn-success">Подходящ</span>
-                                                 break;
-                                             case ApplyStatus.Inappropriate:
+                                                break;
+                                            case ApplyStatus.Inappropriate:
                                                 <span class="btn btn-sm btn-danger">Неподходящ</span>
-                                                 break;
-                                             case ApplyStatus.ModeratelyAppropriate:
+                                                break;
+                                            case ApplyStatus.ModeratelyAppropriate:
                                                 <span class="btn btn-sm btn-info">Средноподходящ</span>
-                                                 break;
-                                             case ApplyStatus.ForAnInterview:
+                                                break;
+                                            case ApplyStatus.ForAnInterview:
                                                 <span class="btn btn-sm btn-warning">За Интервю</span>
-                                                 break;
-                                         }
+                                                break;
+                                        }
                                     </p>
                                     <h4>Промяна</h4>
                                     @using (Html.BeginForm("UserInfo", "Info", FormMethod.Post))
@@ -73,13 +79,15 @@
                                         <div class="form-group">
                                             <input type="submit" value="Изпрати Email" class="btn btn-sm btn-warning" />
                                         </div>
-                                        
+
                                     }
                                 </div>
                             </div>
                             <hr />
 
-                        }
+                            }
+                        </div>
+                        
 
                         <hr>
                     }
@@ -92,3 +100,5 @@
 }
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("UserInfo", new { page }))
+
+@Scripts.Render("~/Content/AdminArea/AccordionStyleScript.js")

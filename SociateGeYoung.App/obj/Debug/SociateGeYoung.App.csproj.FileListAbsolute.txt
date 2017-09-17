@@ -157,3 +157,10 @@ C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.A
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.Mvc5.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.Ado.dll
 C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Glimpse.EF6.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.Web.Common.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.Web.Mvc.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\WebActivatorEx.dll
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.xml
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.Web.Common.xml
+C:\Users\Jordan\Documents\GitHub\SociateGeYoung\SociateGeYoung.App\bin\Ninject.Web.Mvc.xml

@@ -9,6 +9,7 @@ using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.EntityModels;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.App.Controllers
 {
@@ -16,11 +17,11 @@ namespace SociateGeYoung.App.Controllers
     [RoutePrefix("carrer")]
     public class CarrerController : Controller
     {
-        private CarrerService service;
+        private ICarrerService service;
 
-        public CarrerController()
+        public CarrerController(ICarrerService service)
         {
-            this.service = new CarrerService();
+            this.service = service;
         }
         [Route("{userId}")]
         public ActionResult SubmitCV(string userId)

@@ -5,16 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.App.Controllers
 {
     public class HomeController : Controller
     {
-        private HomeService service;
+        private IHomeService service;
 
-        public HomeController()
+        public HomeController(IHomeService service)
         {
-            this.service = new HomeService();
+            this.service = service;
         }
         public ActionResult Index()
         {

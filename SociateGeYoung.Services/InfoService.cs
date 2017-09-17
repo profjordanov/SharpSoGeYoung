@@ -13,10 +13,11 @@ using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Models.EntityModels;
 using SociateGeYoung.Models.Enums;
 using SociateGeYoung.Models.ViewModels;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.Services
 {
-    public class InfoService : Service
+    public class InfoService : Service , IInfoService
     {
         public IEnumerable<ApplicationUser> GetAllUserInfo()
         {
@@ -456,34 +457,6 @@ namespace SociateGeYoung.Services
                 .Where(x => x.ApplyStatus == ApplyStatus.ForAnInterview || x.ApplyStatus == ApplyStatus.Appropriate)
                 .OrderByDescending(x => x.Id);
             return applies;
-        }
-
-        public bool SendEmailToStudent(UserInfoBm bind)
-        {
-            try
-            {
-                using (MailMessage mm = new MailMessage("ugdaka@students.softuni.bg",bind.UserEmail))
-                {
-                    mm.Subject = $"Отговор за {bind.JobPosition}";
-                    mm.Body = $"Вашата кандидатура за {bind.JobPosition} e маркирана като {bind.ApplyStatus}";
-                    mm.IsBodyHtml = false;
-                    using (SmtpClient smtp = new SmtpClient())
-                    {
-                        smtp.Host = "smtp-mail.outlook.com";
-                        smtp.EnableSsl = true;
-                        NetworkCredential NetworkCred = new NetworkCredential("ugdaka@students.softuni.bg", "Fc4b51b3$");
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Credentials = NetworkCred;
-                        smtp.Port = 587;
-                        smtp.Send(mm);
-                    }
-                }
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
         }
     }
 }

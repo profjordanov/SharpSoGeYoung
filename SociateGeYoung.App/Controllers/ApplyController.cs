@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SociateGeYoung.Models.Attributes;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.App.Controllers
 {
@@ -13,11 +14,11 @@ namespace SociateGeYoung.App.Controllers
     [RoutePrefix("apply")]
     public class ApplyController : Controller
     {
-        private ApplyService service;
+        private IApplyService service;
 
-        public ApplyController()
+        public ApplyController(IApplyService service)
         {
-            this.service = new ApplyService();
+            this.service = service;
         }
         [HttpGet]
         [Route]

@@ -16,10 +16,12 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
     public class InfoController : Controller
     {
         private InfoService service;
+        private MailService mailService;
 
         public InfoController()
         {
             this.service = new InfoService();
+            this.mailService = new MailService();
         }
         [HttpGet]
         public ActionResult UserInfo(int? page)
@@ -36,7 +38,7 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 this.service.SaveStatusToApply(bind);
-                bool isSuccessMailed = this.service.SendEmailToStudent(bind);
+                bool isSuccessMailed = this.mailService.SendEmailToStudent(bind);
                 if (isSuccessMailed)
                 {
                     ViewBag.Message = "Успешно прати мейл!";

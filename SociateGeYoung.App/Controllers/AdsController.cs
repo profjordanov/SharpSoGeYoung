@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using SociateGeYoung.Models.ViewModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.App.Controllers
 {
@@ -14,11 +15,11 @@ namespace SociateGeYoung.App.Controllers
 
     public class AdsController : Controller
     {
-        private AdsService service;
+        private IAdsService service;
 
-        public AdsController()
+        public AdsController(IAdsService service)
         {
-            this.service = new AdsService();
+            this.service = service;
         }
 
         [HttpGet]

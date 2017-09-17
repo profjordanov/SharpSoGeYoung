@@ -43,6 +43,7 @@ namespace SociateGeYoung.Services
             CarrerCV cv = this.Context.CarrerCvs.Find(bind.CvId);
             this.Context.CarrerCvs.Remove(cv);
             this.Context.SaveChanges();
+            //TODO: Delete CV from server!
         }
     }
 }

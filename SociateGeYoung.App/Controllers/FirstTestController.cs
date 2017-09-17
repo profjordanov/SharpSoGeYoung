@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using SociateGeYoung.Models.BindingModels;
 using SociateGeYoung.Services;
+using SociateGeYoung.Services.Interfaces;
 
 namespace SociateGeYoung.App.Controllers
 {

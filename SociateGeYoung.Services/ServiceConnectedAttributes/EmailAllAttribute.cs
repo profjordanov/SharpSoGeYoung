@@ -9,10 +9,10 @@ namespace SociateGeYoung.Services.ServiceConnectedAttributes
 {
     public class EmailAllAttribute : ActionFilterAttribute
     {
-        private EmailAttributeService service;
+        private MailService service;
         public EmailAllAttribute()
         {
-            this.service = new EmailAttributeService();
+            this.service = new MailService();
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
