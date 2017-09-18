@@ -11,5 +11,6 @@ namespace SociateGeYoung.Services.Interfaces
         IEnumerable<AllCarrerCVs> GetAllCvsVm(string userId);
         DeleteCvVm GetDeleteCvVm(int id);
         void DeleteCv(DeleteCvBm bind);
+        int GetUserCvCount(string userId);
     }
 }

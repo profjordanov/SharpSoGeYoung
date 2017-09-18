@@ -15,5 +15,6 @@ namespace SociateGeYoung.Services.Interfaces
         IEnumerable<IdentityRole> GetUserRoles();
         void SaveStatusToApply(UserInfoBm bind);
         IEnumerable<Apply> GetAllInterviewApplies();
+        IEnumerable<JobAd> GetAllJobAds();
     }
 }

@@ -45,5 +45,12 @@ namespace SociateGeYoung.Services
             this.Context.SaveChanges();
             //TODO: Delete CV from server!
         }
+
+        public int GetUserCvCount(string userId)
+        {
+            ApplicationUser user = this.UserManager.FindById(userId);
+            int cvCount = user.CarrerCvs.Count();
+            return cvCount;
+        }
     }
 }

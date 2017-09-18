@@ -44,12 +44,17 @@ namespace SociateGeYoung.App.Controllers
                 ModelState.AddModelError("CustomError", "Прекалено голям файл!");
                 return this.View();
             }
-            //TODO: Validations on the model and max CVs for user
 
             if (!(bind.File.ContentType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
     bind.File.ContentType == "application/pdf"))
             {
                 ModelState.AddModelError("CustomError", "Позволени са само .docx и .pdf документи!");
+                return View();
+            }
+            int userCvs = this.service.GetUserCvCount(userId);
+            if (userCvs >= 10)
+            {
+                ModelState.AddModelError("CustomError", "Не може да качиш повече от 10 CV-та!");
                 return View();
             }
 
@@ -96,7 +101,7 @@ namespace SociateGeYoung.App.Controllers
             if (this.ModelState.IsValid)
             {
                 this.service.DeleteCv(bind);
-                return this.RedirectToAction("All","Ads");//TODO: Redirect?
+                return this.RedirectToAction("","Manage");
             }
             DeleteCvVm vm = this.service.GetDeleteCvVm(bind.CvId);
             return this.View(vm);
