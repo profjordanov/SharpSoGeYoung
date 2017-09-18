@@ -15,6 +15,12 @@ namespace SociateGeYoung.App.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
+                 "Edit,Delete_Ad",
+                 "Admin/{controller}/{action}/{id}",
+                  new { action = "Edit", id = UrlParameter.Optional }
+             );
+
+            context.MapRoute(
                  "Delete_User",
                  "Admin/{controller}/Delete/{id}",
                   new { action = "Delete", id = UrlParameter.Optional }

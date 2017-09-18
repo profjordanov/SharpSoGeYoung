@@ -5,7 +5,12 @@
 }
 <div class="container body-content">
     <h2>Details Job Add</h2>
+    @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Промени обява", "Edit", "AdminAd", new { Id = Model.Id, area = "Admin" }, new { @class = "btn btn-lg btn-warning" })
+        @Html.ActionLink("Изтрий обява", "Delete", "AdminAd", new { Id = Model.Id, area = "Admin" }, new { @class = "btn btn-lg btn-danger" })
 
+    }
     <div>
         <h1>@Model.Position</h1>
         <img src="@Model.ImageUrl" alt="" width="400" height="400" class="img-responsive" />

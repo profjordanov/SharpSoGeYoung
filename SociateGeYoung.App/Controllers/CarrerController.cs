@@ -44,6 +44,7 @@ namespace SociateGeYoung.App.Controllers
                 ModelState.AddModelError("CustomError", "Прекалено голям файл!");
                 return this.View();
             }
+            //TODO: Validations on the model and max CVs for user
 
             if (!(bind.File.ContentType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
     bind.File.ContentType == "application/pdf"))

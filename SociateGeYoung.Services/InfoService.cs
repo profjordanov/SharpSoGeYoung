@@ -458,5 +458,11 @@ namespace SociateGeYoung.Services
                 .OrderByDescending(x => x.Id);
             return applies;
         }
+
+        public IEnumerable<JobAd> GetAllJobAds()
+        {
+            IEnumerable<JobAd> jobAds = this.Context.JobAds;
+            return jobAds;
+        }
     }
 }

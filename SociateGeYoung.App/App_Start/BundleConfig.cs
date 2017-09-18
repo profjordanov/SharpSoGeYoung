@@ -8,6 +8,13 @@ namespace SociateGeYoung.App
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetimepicker").Include(
+                         "~/Scripts/moment.js",
+                         "~/Scripts/bootstrap-datetimepicker.js"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap-datetimepicker").Include(
+                        "~/Content/bootstrap-datetimepicker.min.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/tinymce").Include(
                        "~/Scripts/tinymce/tinymce.js",
                        "~/Scripts/tinymceMain.js"));

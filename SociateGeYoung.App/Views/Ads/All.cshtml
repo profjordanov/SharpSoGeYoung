@@ -10,11 +10,11 @@
         <div style="border: 2px solid black" class="container">
             <img src="@vm.ImageUrl" alt="" width="200" height="200" style="alignment: left" />
             <label>@vm.Position</label>
+            <label>Създадена на @vm.CreateOn</label>
             <label>Студентски профил: <strong>@vm.StudentProfile</strong> </label>
-            @Html.ActionLink("Повече информация","Details", new {id = vm.Id}, new { @class = "btn btn-lg btn-success" })
+            @Html.ActionLink("Повече информация", "Details", new { id = vm.Id }, new { @class = "btn btn-lg btn-success" })
         </div>
         <br />
     }
-   
-</div>
 
+</div>

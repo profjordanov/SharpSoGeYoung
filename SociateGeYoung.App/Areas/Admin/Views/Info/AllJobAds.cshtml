@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SociateGeYoung.Models.EntityModels.JobAd>
+@{
+    ViewBag.Title = "AllJobAds";
+}
+
+<h2>Всички обяви за работа</h2>
+@Html.ActionLink("Довави Нова Обява", "Add", "AdminAd", new { }, new { @class = "btn btn-lg btn-primary" })
+<table class="table table-striped">
+    <tr>
+        <th>Работна позиция</th>
+        <th>Местоположение</th>
+        <th>Студентски профил</th>
+        <th>Изтрита</th>
+        <th>Промяна</th>
+    </tr>
+    @foreach (var jobAd in Model)
+    {
+        <tr>
+            <td>@jobAd.Position</td>
+            <td>@jobAd.Location</td>
+            <td>@jobAd.StudentProfile.ToString()</td>
+            @if (jobAd.IsDeleted)
+            {
+                <td>Да</td>
+            }
+            else
+            {
+                <td>Не</td>
+            }
+
+            <td>
+                <a href="/Admin/AdminAd/Edit/@jobAd.Id" class="btn btn-success">Промени</a>
+                <a href="/Admin/AdminAd/Delete/@jobAd.Id" class="btn btn-danger">Изтрий</a>
+            </td>
+        </tr>
+
+    }
+</table>
+

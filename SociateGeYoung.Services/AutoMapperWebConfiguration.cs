@@ -24,7 +24,9 @@ namespace SociateGeYoung.Services
                 expression.CreateMap<CarrerCV, DeleteCvVm>();
                 expression.CreateMap<AddNewBm, New>();
                 expression.CreateMap<New, HomeNewsVm>();
-
+                expression.CreateMap<JobAd, EditAdVm>();
+                expression.CreateMap<EditAdBm, JobAd>();
+                expression.CreateMap<JobAd, DeleteJobAdVm>();
 
             });
         }

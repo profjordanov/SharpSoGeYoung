@@ -107,7 +107,9 @@
     <Compile Include="BindingModels\AddNewBm.cs" />
     <Compile Include="BindingModels\AddTestCodeBm.cs" />
     <Compile Include="BindingModels\DeleteCvBm.cs" />
+    <Compile Include="BindingModels\DeleteJobAdBm.cs" />
     <Compile Include="BindingModels\DeleteUserBm.cs" />
+    <Compile Include="BindingModels\EditAdBm.cs" />
     <Compile Include="BindingModels\FirstTestBM.cs" />
     <Compile Include="BindingModels\ModifyRoleBm.cs" />
     <Compile Include="BindingModels\SubmitCVBm.cs" />
@@ -138,6 +140,8 @@
     <Compile Include="ViewModels\CarrerCvVm.cs" />
     <Compile Include="ViewModels\DatailsJobAdVm.cs" />
     <Compile Include="ViewModels\DeleteCvVm.cs" />
+    <Compile Include="ViewModels\DeleteJobAdVm.cs" />
+    <Compile Include="ViewModels\EditAdVm.cs" />
     <Compile Include="ViewModels\HomeNewsVm.cs" />
     <Compile Include="ViewModels\InfoUserVm.cs" />
     <Compile Include="ViewModels\JobAdVm.cs" />

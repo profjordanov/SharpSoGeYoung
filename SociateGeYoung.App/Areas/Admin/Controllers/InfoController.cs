@@ -100,7 +100,14 @@ namespace SociateGeYoung.App.Areas.Admin.Controllers
         {
             IEnumerable<Apply> appliesForInterview = this.service.GetAllInterviewApplies();
             return this.View(appliesForInterview);
-        } 
+        }
+
+        [HttpGet]
+        public ActionResult AllJobAds()
+        {
+            IEnumerable<JobAd> jobAds = this.service.GetAllJobAds();
+            return this.View(jobAds);
+        }
 
         /*
         [HttpPost]

@@ -1,0 +1,19 @@
+﻿@model SociateGeYoung.Models.ViewModels.DeleteJobAdVm
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтрий @Model.Position</h2>
+<img src="@Model.ImageUrl" alt="Picture" height="300" width="300" />
+<p>@Model.Location</p>
+<p>@Model.StudentProfile</p>
+<p>@Model.ValidUntil</p>
+<p>@Model.Description</p>
+@using (Html.BeginForm("Delete", "AdminAd", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-group">
+        <input type="submit" value="Изтрий" class="btn btn-lg btn-danger" />
+    </div>
+}
+

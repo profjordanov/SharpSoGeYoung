@@ -12,5 +12,7 @@ namespace SociateGeYoung.Models.ViewModels
 
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+        public bool IsDeleted { get; set; }
+
     }
 }
