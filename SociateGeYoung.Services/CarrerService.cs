@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using AutoMapper;
 using SociateGeYoung.Models.EntityModels;
@@ -41,6 +43,10 @@ namespace SociateGeYoung.Services
         public void DeleteCv(DeleteCvBm bind)
         {
             CarrerCV cv = this.Context.CarrerCvs.Find(bind.CvId);
+            if (File.Exists(HttpContext.Current.Server.MapPath("~/UploadedCVs/")+cv.CVpath))
+            {
+                File.Delete(HttpContext.Current.Server.MapPath("~/UploadedCVs/") + cv.CVpath);
+            }
             this.Context.CarrerCvs.Remove(cv);
             this.Context.SaveChanges();
             //TODO: Delete CV from server!
