@@ -1,0 +1,8 @@
+yordan.yordanov@immedis.com
+FC4b51b3daka@
+
+fc4b51b3
+
+Hello friends,
+I'm trying to upload App_Offline during Web Deploy for ASP. NET MVC application. I want to give this task to Jenkins by having to upload 
+App_Offline at the beginning of the process and rub it at the end or if failure. Did anyone do something like this? Thanks !
