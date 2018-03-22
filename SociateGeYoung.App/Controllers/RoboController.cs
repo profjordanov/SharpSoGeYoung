@@ -16,5 +16,12 @@ namespace SociateGeYoung.App.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        [Route("Chat")]
+        public ActionResult Chat()
+        {
+            return View();
+        }
     }
 }

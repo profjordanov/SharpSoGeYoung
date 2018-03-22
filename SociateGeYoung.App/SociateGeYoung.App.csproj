@@ -779,6 +779,7 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
+    <Content Include="Views\Robo\Chat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SociateGeYoung.Data\SociateGeYoung.Data.csproj">
